@@ -7,7 +7,11 @@
 	<a @click="logMeOut()">Wyloguj</a>
     </div>
     <div v-else>
-	<login-form @login="logMeIn($event)"></login-form>
+	<login-form @login="logMeIn($event)" button-label="Wchodzę"></login-form>
+				
+	<login-form @login="enter($event)" button-label="Wejdź"></login-form>
+	<login-form @login="enter($event)" button-label="Wleć"></login-form>
+	<login-form @login="enter($event)" :button-label="Math.random() < 0.5 ? 'Etykieta A' : 'Etykieta B'"></login-form>
     </div>
   </div>
 </template>
